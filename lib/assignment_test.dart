@@ -6,10 +6,12 @@ void main() {
   var savings = SavingsAccount('1234', 'Sarjak', 9000);
   var checking = CheckingAccount('1235', 'Ravi', 2000);
   var premium = PremiumAccount('1236', 'Anisha', 1000);
+  var student = StudentAccount('1237', 'Niraj', 3000);
 
   bank.createAccount(savings);
   bank.createAccount(checking);
   bank.createAccount(premium);
+  bank.createAccount(student);
 
   savings.withdraw(amount: 200);
   savings.calculateInterest();
@@ -18,6 +20,12 @@ void main() {
 
   premium.calculateInterest();
 
+  student.deposit(amount: 1500);
+  student.withdraw(amount: 500);
+
   bank.transfer('1234', '1235', 500);
+
+  bank.applyMonthlyInterest();
+
   bank.generateReport();
 }
