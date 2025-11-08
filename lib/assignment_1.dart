@@ -33,6 +33,10 @@ abstract class BankAccount {
     print('Account Number: $_accountNumber');
     print('Account Holder: $_accountHolderName');
     print('Balance: \$$_balance');
+    print('Transactions:');
+    for (var t in _transactions) {
+      print(' - $t');
+    }
   }
 
   void addTransaction(String description) {
